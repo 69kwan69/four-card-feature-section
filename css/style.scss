@@ -25,6 +25,11 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     padding: 3rem;
 }
 
@@ -70,7 +75,10 @@ body {
     margin-bottom: 6rem;
 
     .card {
+        justify-self: center;
+        
         width: 100%;
+        max-width: 35rem;
         height: fit-content;
         padding: 3rem;
         min-height: 22rem;
@@ -85,7 +93,6 @@ body {
 
         &:nth-child(1) {
             grid-area: supervisor;
-            
         }
 
         &:nth-child(2) {
@@ -169,13 +176,13 @@ footer {
     }
 }
 
-@media (width >= 1024px) {
+@media (width >= 1150px) {
     .heading > .title {
         font-size: 3.8rem;
     }
 
     .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, max-content);
         grid-template-areas:
             'supervisor team-builder calculator'
             'supervisor karma calculator';

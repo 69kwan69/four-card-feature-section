@@ -13,6 +13,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 3rem;
 }
 
@@ -50,7 +54,9 @@ body {
   margin-bottom: 6rem;
 }
 .cards-grid .card {
+  justify-self: center;
   width: 100%;
+  max-width: 35rem;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
@@ -127,12 +133,13 @@ footer .attribution a {
     grid-template-areas: "supervisor team-builder" "karma calculator";
   }
 }
-@media (width >= 1024px) {
+@media (width >= 1150px) {
   .heading > .title {
     font-size: 3.8rem;
   }
   .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, -webkit-max-content);
+    grid-template-columns: repeat(3, max-content);
     grid-template-areas: "supervisor team-builder calculator" "supervisor karma calculator";
   }
   .cards-grid .card:first-child, .cards-grid .card:last-child {
