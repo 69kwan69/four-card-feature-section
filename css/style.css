@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: "Poppins", sans-serif;
+  font-size: 62.5%;
+}
+
+body {
+  padding: 3rem;
+}
+
+.title {
+  color: hsl(234deg, 12%, 34%);
+}
+
+.subtitle {
+  color: hsl(229deg, 6%, 66%);
+}
+
+.heading {
+  padding: 7rem 0;
+  text-align: center;
+}
+.heading > .title {
+  font-size: 2.5rem;
+}
+.heading > .title span {
+  display: block;
+  font-weight: 200;
+}
+.heading > .subtitle {
+  max-width: 55rem;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  font-size: 1.6rem;
+  line-height: 1.5em;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-areas: "supervisor" "team-builder" "karma" "calculator";
+  gap: 2.5rem;
+  margin-bottom: 6rem;
+}
+.cards-grid .card {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 3rem;
+  min-height: 22rem;
+  position: relative;
+  border-radius: 1rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  text-align: left;
+  overflow: hidden;
+}
+.cards-grid .card:nth-child(1) {
+  grid-area: supervisor;
+}
+.cards-grid .card:nth-child(2) {
+  grid-area: team-builder;
+}
+.cards-grid .card:nth-child(3) {
+  grid-area: karma;
+}
+.cards-grid .card:nth-child(4) {
+  grid-area: calculator;
+}
+.cards-grid .card::before {
+  content: "";
+  height: 0.4rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.cards-grid .card:nth-child(1)::before {
+  background: hsl(180deg, 62%, 55%);
+}
+.cards-grid .card:nth-child(2)::before {
+  background: hsl(0deg, 78%, 62%);
+}
+.cards-grid .card:nth-child(3)::before {
+  background: hsl(34deg, 97%, 64%);
+}
+.cards-grid .card:nth-child(4)::before {
+  background: hsl(212deg, 86%, 64%);
+}
+.cards-grid .card .title {
+  font-size: 2rem;
+}
+.cards-grid .card .subtitle {
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+  line-height: 1.8em;
+}
+.cards-grid .card img {
+  width: 6rem;
+  height: auto;
+  position: absolute;
+  bottom: 3rem;
+  right: 3rem;
+}
+
+footer {
+  display: none;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+footer .attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media (width >= 700px) {
+  .cards-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "supervisor team-builder" "karma calculator";
+  }
+}
+@media (width >= 1024px) {
+  .heading > .title {
+    font-size: 3.8rem;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "supervisor team-builder calculator" "supervisor karma calculator";
+  }
+  .cards-grid .card:first-child, .cards-grid .card:last-child {
+    align-self: center;
+  }
+}/*# sourceMappingURL=style.css.map */
